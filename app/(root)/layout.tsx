@@ -14,7 +14,7 @@ const RootLayout =({children} : {children: ReactNode})=> {
             <nav>
                 <Link href="/" className="flex items-center gap-2">
                     <Image src="/logo.svg" alt="logo" width={38} height={32}></Image>
-                    <h2 className="text-primary-100">InterviewPrep</h2>
+                    <h2 className="text-primary-100">PrepRing</h2>
                 </Link>
             </nav>
             {children}
