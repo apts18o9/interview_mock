@@ -21,7 +21,16 @@ const RootLayout =  async ({children} : {children: ReactNode})=> {
                     <Image src="/logo.svg" alt="logo" width={38} height={32} />
                     <h2 className="text-primary-100 font-semibold text-lg">PrepRing</h2>
                 </Link>
-                <span className="text-gray-700 font-medium text-base">Hello, {username}</span>
+
+                <div className="flex items-center gap-4">
+                    <span className="text-white font-medium text-base">Hello, {username}</span>
+                    <button
+                        type="button"
+                        className="px-4 py-1 text-sm font-semibold text-white bg-red-600 rounded hover:bg-red-700 transition"
+                    >
+                        Logout
+                    </button>
+                </div>
             </nav>
             {children}
         </div>
