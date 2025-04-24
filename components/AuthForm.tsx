@@ -14,7 +14,7 @@ import FormField from "@/components/FormField";
 import {useRouter} from "next/navigation";
 import {createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
 import {auth} from "@/firebase/client"
-import {signUp} from "@/lib/actions/auth.action";
+import {signIn, signUp} from "@/lib/actions/auth.action";
 
 type FormType = "sign-in" | "sign-up";
 
@@ -68,7 +68,7 @@ const AuthForm = ({type}: { type: FormType }) => {
                     toast.error(result?.message)
                 }
 
-                toast.success("Account created successfully, Please SignIn")
+                toast.success("Account created successfully, Please sign in")
                 router.push('/sign-in')
             }
             //sign in
@@ -83,6 +83,11 @@ const AuthForm = ({type}: { type: FormType }) => {
                     toast.error('Sign in failed')
                     return;
                 }
+
+                await signIn({
+                    email,
+                    idToken,
+                });
 
                 toast.success('Sign In success')
                 router.push('/')
@@ -102,7 +107,7 @@ const AuthForm = ({type}: { type: FormType }) => {
             <div className="flex flex-col gap-6 card py-14 px-10">
                 <div className="flex flex-row gap-2 justify-center">
                     <Image src={"/logo.svg"} alt={"logo"} height={32} width={38} />
-                    <h2 className="text-primary-100">SpeedPrep</h2>
+                    <h2 className="text-primary-100">PrepWise</h2>
                 </div>
 
 

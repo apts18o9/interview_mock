@@ -114,15 +114,21 @@ export async function getCurrentUser(): Promise<User | null>{
         const userRecord = await db.
             collection('users').doc(decodedClaims.uid).get()
 
-        if(!userRecord) return null;
+
+        if(!userRecord.exists) return null;
+
+
+        const userData = userRecord.data();
+        const userDataName = userData?.name;
 
         return{
-            ...userRecord.data(),
             id: userRecord.id,
+            name: userDataName,
+            ...userData,
         } as User
 
     }catch (e) {
-        console.log(e)
+        console.error('error in getCurrentUser', e);
 
         return null;
     }
