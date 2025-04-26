@@ -87,6 +87,7 @@ const Agent = ({userName, userId, type}:AgentProps) => {
         setCallStatus(CallStatus.FINISHED);
 
         vapi.stop();
+
     }
 
     //get last message

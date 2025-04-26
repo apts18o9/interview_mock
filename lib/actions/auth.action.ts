@@ -144,7 +144,7 @@ export async function isAuthenticated(){
 
 //function to fetch all interviews related to a user
 
-export async function getInterviewsByUserId(userId: string): Promise<Interview[] | null>{
+export async function getInterviewsByUserId(userId: string): Promise<Interview[]>{
 
     const interviews = await db
         .collection('interviews')
