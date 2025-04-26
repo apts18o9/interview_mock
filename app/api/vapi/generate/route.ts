@@ -8,7 +8,7 @@ export async function OPTIONS() {
     return new Response(null, {
         status: 204,
         headers: {
-            "Access-Control-Allow-Origin": "https://prepring.vercel.app/", // For production, use your domain instead of "*"
+            "Access-Control-Allow-Origin": "https://prepring.vercel.app", // For production, use your domain instead of "*"
             "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
@@ -22,7 +22,7 @@ export async function GET(){
         message: "thank you",
     }, {status: 200,
         headers: {
-        "Access-Control-Allow-Origin": "https://prepring.vercel.app/",
+        "Access-Control-Allow-Origin": "https://prepring.vercel.app",
             "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
         }
@@ -61,12 +61,13 @@ export async function POST(request: Request){
             createdAt: new Date().toISOString()
         }
 
+        console.log("generated interviews", interview);
         await db.collection("interviews").add(interview);
 
         return Response.json({success: true}, {status: 200,
 
             headers: {
-                "Access-Control-Allow-Origin": "https://prepring.vercel.app/",
+                "Access-Control-Allow-Origin": "https://prepring.vercel.app",
                 "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
                 "Access-Control-Allow-Headers": "Content-Type, Authorization",
             }
@@ -74,11 +75,11 @@ export async function POST(request: Request){
 
 
     }catch(error){
-        console.error(error);
+        console.error("full error", error);
 
         return Response.json({success: false}, {status: 500,
             headers: {
-                "Access-Control-Allow-Origin": "https://prepring.vercel.app/",
+                "Access-Control-Allow-Origin": "https://prepring.vercel.app",
                 "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
                 "Access-Control-Allow-Headers": "Content-Type, Authorization",
             }
