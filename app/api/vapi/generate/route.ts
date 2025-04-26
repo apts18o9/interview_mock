@@ -8,7 +8,7 @@ export async function OPTIONS() {
     return new Response(null, {
         status: 204,
         headers: {
-            "Access-Control-Allow-Origin": "*", // For production, use your domain instead of "*"
+            "Access-Control-Allow-Origin": "https://prepring.vercel.app/", // For production, use your domain instead of "*"
             "Access-Control-Allow-Methods": "GET,POST,OPTIONS",
             "Access-Control-Allow-Headers": "Content-Type, Authorization",
         },
