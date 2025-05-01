@@ -34,7 +34,7 @@ const Page = async () => {
                     <h2>Get Interview Ready with AI</h2>
 
                     <p className="text-lg">Practice on real interview questions and get instant score</p>
-
+                    <p>{user?.id}</p>
                     <Button asChild className="btn-primary max-sm:w-full">
                         <Link href="/interview">Start an Interview</Link>
                     </Button>
