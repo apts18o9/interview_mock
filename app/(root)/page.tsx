@@ -21,10 +21,10 @@ const Page = async () => {
         );
     }
 
-    // Now safe to use user.id without non-null assertion
+   
     const userInterviews = await getInterviewsByUserId(user.id);
 
-    // Handle null or undefined userInterviews by defaulting to empty array
+    
     const hasPastInterviews = userInterviews?.length > 0;
 
     return (

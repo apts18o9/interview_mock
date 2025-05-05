@@ -63,7 +63,7 @@ export async function POST(request: Request){
 
         console.log("generated interviews", interview);
         await db.collection("interviews").add(interview);
-
+        console.log("data recieived",{type, techstack, userid, amount, level} )
         return Response.json({success: true}, {status: 200,
 
             headers: {
