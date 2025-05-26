@@ -40,3 +40,12 @@ vercel.json
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+
+
+next.config.js
+pacakge-lock.json
+package.json
+eslint.config.mjs
+
+lib/actions/utils.ts
