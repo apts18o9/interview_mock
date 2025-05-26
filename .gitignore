@@ -50,3 +50,4 @@ eslint.config.mjs
 
 lib/utils.ts
 firebase/client.ts
+.idea
