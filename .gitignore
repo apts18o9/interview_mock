@@ -44,8 +44,8 @@ next-env.d.ts
 
 
 next.config.js
-pacakge-lock.json
+package-lock.json
 package.json
 eslint.config.mjs
 
-lib/actions/utils.ts
+lib/utils.ts
